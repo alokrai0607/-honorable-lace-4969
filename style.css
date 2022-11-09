@@ -1,0 +1,113 @@
+body{
+    background-color: whitesmoke;
+}
+
+/* #main{
+    height: 100px;
+    width: 100% ;
+    border: 1px solid black;
+    
+} */
+
+#main div{
+    height: 100px;
+    width: 100% ;
+    border: 1px solid black  
+} 
+#Nav0{
+    height:50px;
+}
+
+
+ #find{
+    margin-top: 0px;
+    margin-left: 30px;
+    border: none;
+    
+ }
+ #logo{
+    margin-left: 450px;
+    margin-top: 20px;
+ }
+
+ #search{
+    margin-left: 350px;
+    border: none;
+ }
+
+ #SignIn{
+    margin-left: 40px;
+    border: none;
+ }
+
+ #Cart{
+    margin-left: 40px;
+    border: none;
+ }
+ #Language{
+    margin-left: 40px;
+    margin-right: 30px;
+    border: none;
+ }
+
+ #Nav2{
+    border: 1px solid black;
+    height: 100px;
+    width: 100%;
+    margin-top: 0px;
+    text-align: center;
+ }
+ #Nav2 button{
+    margin-top: 42px;
+    align-content: space-around;
+    border: none;
+    font-size: 10px
+ }
+  #add{
+    display: flex;
+    height: 600px;
+    width:1400px;
+    margin-left: 150px;
+    
+  } 
+  .para{
+    background-color: rgb(107, 52, 107);
+    text-align: center;
+    color: aliceblue;
+    
+  }
+  .para>h1{
+    margin-top: 150px;
+    
+  }
+
+
+  /* #container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+
+        #container>div>img {
+            width: 100%;
+        }
+
+        #container>div {
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        } */
+
+        /* for Mediam Screen */
+
+        /* @media all and (min-width: 400px) and (max-width: 700px) {
+            #container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        } */
+       /* for Small Screen */
+        /* @media all and (min-width: 200px) and (max-width: 399px) {
+            #container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        } */
