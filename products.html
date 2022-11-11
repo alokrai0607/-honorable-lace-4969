@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <style>
+    /* Write all necessery css here */
+    #product-container {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows:auto;
+      gap: 20px;
+
+
+    }
+
+    #product-container>div {
+      text-align: center;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      /* grid-template-columns: repeat(4, 1fr); */
+    }
+
+    #product-container>div>img {
+      width: 90 px;
+
+    }
+
+    #product-container>div>button:hover {
+      background-color: green;
+       color: black;
+       font-size: 40px;
+       width: 300px;
+
+    }
+
+    #filter{
+        height: 100px;
+        width: 100%;
+        text-align: center;
+        font-size: 60px;
+        background-color: whitesmoke;
+    }
+
+    #product-container>div>button {
+      background-color: blueviolet;
+    }
+
+    #product-container>div>button {
+      background-color: rgb(153, 24, 24);
+      width: 300px;
+      height: 50px;
+      color: aliceblue;
+      border-radius: 6px;
+      border: black;
+      text-align: center;
+
+    }
+       
+    #product-container>div  :nth-child(1){
+        background-color: white;
+        height: 300px;
+        width: 300px;
+        /* grid-template-columns: repeat(4,1fr); */
+    }
+
+    .nav{
+       
+       background-color: whitesmoke
+       
+   }
+
+    body{
+        background-color: black; 
+    }
+   .nav>h1 {
+     display: inline;
+     font-size: 100px;
+     color: black 
+      
+   }
+
+   #home{
+      
+       margin-left: 700px;
+       padding: 20px 50px 20px 50px;
+       font-size: 350%;
+       color: black;
+   }
+   #cart{
+      
+      margin-left: 70px;
+      padding: 20px 50px 20px 50px;
+      font-size: 350%;
+      color: black;
+  }
+
+  #he{
+    margin-left: 200px;
+  }
+
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <h1 id="he">Rodan + Fields</h1>
+    <a id="home" href="index.html">Home</a>
+    <a id="cart"  href="cart.html">Cart</a>
+  </div>
+  <!-- Use this Select Tag for Filtering the Products  -->
+  <select id="filter">
+    <option value="">Filter By Category</option>
+    <option value="Skin">Skin Care</option>
+    <option value="Hair">Hair Care</option>
+  </select>
+  <div id="product-container">
+    <!-- Here Append All the Products  -->
+  </div>
+</body>
+<script>
+  // Write all necessery JS here 
+
+  let url = "https://636b71edad62451f9fb1bf51.mockapi.io/Products"
+  let arr = [];
+  async function getdata() {
+    try {
+      let res = await fetch(url);
+      let out = await res.json();
+      arr = out
+      console.log(arr);
+      display(arr)
+    } catch (err) {
+      alert(err);
+    }
+  }
+  getdata()
+
+  //filter function here
+
+  function filteritem() {
+    let select = document.querySelector("#filter").value;
+    let filteredata = arr.filter(function (element) {
+      return element.category == select
+
+    });
+  }
+
+
+  function display(arr) {
+
+    let carts = JSON.parse(localStorage.getItem("cart")) || [];
+    document.querySelector("#product-container").innerHTML = "";
+
+
+    arr.forEach(function (element) {
+
+      let div = document.createElement("div");
+
+      let img = document.createElement("img")
+      img.setAttribute("src", element.img)
+
+      let title = document.createElement("h2")
+      title.innerText = element.title;
+
+      let category = document.createElement("p")
+      category.innerText = element.category
+
+      let discription = document.createElement("p")
+      discription.innerText = element.discription
+
+      let price = document.createElement("h3")
+      price.innerText = "₹"+element.price
+
+      let btn = document.createElement("button");
+      btn.innerText = "Add To Cart"
+    //   btn.setAttribute("id","hello");
+      div.append(img, title, category, discription, price, btn);
+      document.querySelector("#product-container").append(div);
+
+
+    });
+
+  }
+  
+
+</script>
+
+</html>

@@ -17,13 +17,15 @@ body {
 
 #find {
     margin-top: 0px;
-    margin-left: 30px;
-    border: none;
+    margin-left: 50px;
+    padding: 10px 10px;
+    background-color: rosybrown;
+  
 
 }
 
 #logo {
-    margin-left: 500px;
+    margin-left: 600px;
     margin-top: 20px;
 
 }
@@ -44,13 +46,13 @@ body {
 }
 
 #Language {
-    margin-left: 40px;
-    margin-right: 30px;
-    border: none;
+    margin-left: 30px;
+    margin-right: 10px;
+    
 }
 
 #Nav2 {
-    border: 1px solid black;
+    border: 1px solid rgb(239, 12, 12);
     height: 100px;
     width: 100%;
     margin-top: 0px;
@@ -68,8 +70,9 @@ body {
 #add {
     display: flex;
     height: 600px;
-    width: 1400px;
-    margin-left: 200px;
+    width: auto;
+    margin-left:auto;
+    padding: 40px 250px;
     text-shadow: 0rem;
     align-self: stretch;
     margin-top: 50px;
@@ -200,7 +203,7 @@ button{
 }
 
 .slide-container div{
-    background-color: #00d2ff;
+    background-color: white;
     text-align: left;
 }
 
@@ -226,9 +229,119 @@ button{
     border: 2px solid black;
     height: 40px;
     width: 90%;
-    background-color: burlywood;
-    border-radius: 10%;
+    background-color: gray;
+    
 }
 
+#green{
+    height: 300px;
+    width: 80%;
+    background-color: turquoise;
+    margin: auto;
+    padding-top: 60px;
+    margin-top: 40px;
+}
 
+#white{
+    height: 200px;
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    padding-top: 30px;
+    display: flex;
+}
+
+#white>div{
+    justify-content: space-between;
+}
+
+#lab{
+    height: 500px;
+    width: 80%;
+    background-color: bisque;
+    margin: auto;
+    display: flex;
+    /* padding-top: 60px;*/
+     margin-top: 40px;
+}
+
+#lab>div>div>img{
+    height: 300px;
+    width: 430px;
+    justify-content: space-between;
+}
+
+#lab div div{
+    justify-content: space-evenly;
+}
+
+.bt{
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+#la{
+    margin-left: 40px;
+}
+
+.ba{
+    border: none;
+}
+
+#Prod{
+    display: flex;
+}
+#Pro{
+    display: flex;
+    height:500px;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    background-color: darkcyan;
+}
+#Prod>div>img{
+    height: 450px;
+    width: 400px;
+    padding: 10px 10px;
+}
+
+.ds{
+    margin-top: 120px;
+    margin-left: 10px;
+}
+
+.foot{
+    border: 1px solid black;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+}
+.foot div{
+    justify-content: space-around;
+}
+
+.d1{
+    margin-left: 40px;
+}
+
+.d3{
+    margin-left: 400px;
+}
+
+.foot>div>h3,h2 {
+    color: palevioletred;
+}
+
+#signup{
+
+    margin-left: 50px;
+    
+}
+
+#login{
+
+    margin-left: 50px;
+    
+}
 
