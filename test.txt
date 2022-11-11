@@ -1,0 +1,75 @@
+<style>
+   /* Write all necessery css here  */
+    #product-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 20px;
+
+
+
+    }
+
+    #product-container>div {
+      text-align: center;
+      background-color: bisque;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      height: 600px;
+      width: 550px;
+      gap: 20px;
+    }
+
+    /* #product-container>div>img {
+      width: 30 px;
+
+    } */
+
+    #product-container>div>button:hover {
+      background-color: aqua;
+      /* width: 100px;
+      height: 100px; */
+
+    }
+
+    #product-container>div>button {
+
+      width: 100px;
+      height: 50px;
+
+    }
+
+     #product-container>div>button {
+      background-color: white;
+      width: 100px;
+      height: 50px;
+      color: aliceblue;
+      border-radius: 6px;
+      border: black;
+      text-align: center;
+
+    }
+    .nav{
+       
+        background-color: rgba(216, 23, 230, 0.172);
+    }
+
+    .nav>h1 {
+      display: inline;
+      font-size: 100px;
+      color: purple  
+    }
+
+    #home{
+       
+        margin-left: 700px;
+        padding: 20px 50px 20px 50px;
+        font-size: 350%;
+    }
+    #cart{
+       
+       margin-left: 70px;
+       padding: 20px 50px 20px 50px;
+       font-size: 350%;
+   }
+   
+  </style>
