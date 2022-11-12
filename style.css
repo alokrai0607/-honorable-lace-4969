@@ -18,37 +18,57 @@ body {
 #find {
     margin-top: 0px;
     margin-left: 50px;
-    padding: 10px 10px;
-    background-color: rosybrown;
-  
+    border-radius: 5%;
+    color: red;
+    padding: 10px;
+    border: 3px solid black;
+    background-color: whitesmoke;
+}
 
+#Nav1>button>a {
+    text-decoration: none;
 }
 
 #logo {
-    margin-left: 600px;
+    margin-left: 400px;
     margin-top: 20px;
 
 }
 
 #search {
-    margin-left: 350px;
-    border: none;
+    margin-left: 250px;
+    font-size: bold;    
 }
 
 #SignIn {
     margin-left: 40px;
-    border: none;
+    
+}
+
+#signup1{
+    margin-left: 280px;
+    margin-top: 20px;
+    border: 3px solid black;
+    color: red;
+    border-radius: 5%;
+    padding: 10px;
+    background-color: whitesmoke;
 }
 
 #Cart {
     margin-left: 40px;
-    border: none;
+
 }
 
 #Language {
-    margin-left: 30px;
-    margin-right: 10px;
-    
+    margin-left: 50px;
+    border: 3px solid black;
+    font-size: 20px;
+    padding: 7px 40px;
+    text-decoration: none;
+    color: red;
+
+
 }
 
 #Nav2 {
@@ -64,14 +84,17 @@ body {
     align-content: space-around;
     border: none;
     font-size: 10px
-   
+}
+
+#Nav2>button>a {
+    text-decoration: none;
 }
 
 #add {
     display: flex;
     height: 600px;
     width: auto;
-    margin-left:auto;
+    margin-left: auto;
     padding: 40px 250px;
     text-shadow: 0rem;
     align-self: stretch;
@@ -91,8 +114,8 @@ body {
 
 }
 
-#gift{
-    
+#gift {
+
     height: 400px;
     width: 1000px;
     margin: auto;
@@ -102,7 +125,7 @@ body {
     transition: 1s;
 }
 
-#gift img{
+#gift img {
     height: 400px;
     width: 300px;
     border-radius: 10%;
@@ -110,17 +133,18 @@ body {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-#shop{
+#shop {
     text-align: center;
     display: flex;
-    width:60%; 
-   justify-content: space-around;
-   align-items: center;
-   margin: auto;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
     /* border: 1px solid black; */
     transition: 1s;
 }
-.simg>img{
+
+.simg>img {
     width: 95%;
     border-radius: 1%;
 }
@@ -129,23 +153,25 @@ button:hover {
     background-color: teal;
     transition: 1s;
 }
-#gift :hover{
+
+#gift :hover {
     transform: scale(1.1);
     z-index: 2;
 }
-#shop .simg:hover{
+
+#shop .simg:hover {
     transform: scale(1.1);
     z-index: 2;
 
 }
 
-.container{
-    height:625px;
+.container {
+    height: 600px;
     width: 90%;
     /* border: 1px solid black; */
     margin: auto;
     margin-top: 30px;
-    background-color: bisque;
+    background-color: white;
     display: grid;
     place-items: center;
     background: linear-gradient(90deg, #00d2ff 0% #3a47d5 100%);
@@ -153,14 +179,15 @@ button:hover {
     overflow: hidden;
     border-radius: 1%;
 }
-.slide-img>img{
+
+.slide-img>img {
     height: 200px;
     width: 250px;
     background-color: white;
-    
+
 }
 
-.slide-container{
+.slide-container {
     display: flex;
     width: calc(250px*18);
     animation: scroll 10s linear infinite;
@@ -168,16 +195,16 @@ button:hover {
 }
 
 @keyframes scroll {
-    0%{
+    0% {
         transform: translateX(0);
     }
 
-    100%{
+    100% {
         transform: translateX(calc(-250px * 9));
     }
 }
 
-.slide-img{
+.slide-img {
     height: 150 px;
     width: 350px;
     display: flex;
@@ -186,54 +213,63 @@ button:hover {
     perspective: 100px;
 }
 
-img{
-    width:20 px;
+img {
+    width: 20 px;
     transition: transform 1s;
 }
-img:hover{
+
+img:hover {
     transform: translateZ(30px);
 }
 
-button{
+button {
     font-size: 25px;
 }
 
-#Nav2 button{
+#Nav2 button {
     font-size: 20px;
 }
 
-.slide-container div{
+.slide-container div {
     background-color: white;
     text-align: left;
 }
 
-#derm{
+#derm {
     height: 420px;
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(6 ,1fr);
+    grid-template-columns: repeat(6, 1fr);
     margin: auto;
     background-color: antiquewhite;
 
-    
+
 }
 
-#flex-img>img{
+#flex-img>img {
     height: 300px;
     width: 260px;
     align-self: center;
-    
+    margin-left: 40px;
+    margin-top: 20px;
+
 }
 
-.btn{
+#flex-img h4 {
+    margin-left: 40px;
+}
+
+.btn {
     border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
     height: 40px;
     width: 90%;
-    background-color: gray;
-    
+    /* background-color: gray; */
+
 }
 
-#green{
+#green {
     height: 300px;
     width: 80%;
     background-color: turquoise;
@@ -242,106 +278,131 @@ button{
     margin-top: 40px;
 }
 
-#white{
+#white {
     height: 200px;
-    width: 80%;
+    width: 90%;
     background-color: white;
     margin: auto;
     padding-top: 30px;
     display: flex;
 }
 
-#white>div{
-    justify-content: space-between;
+#white>div {
+    margin-left: 40px;
 }
 
-#lab{
+#lab {
     height: 500px;
     width: 80%;
     background-color: bisque;
     margin: auto;
     display: flex;
     /* padding-top: 60px;*/
-     margin-top: 40px;
+    margin-top: 40px;
 }
 
-#lab>div>div>img{
+#lab>div>div>img {
     height: 300px;
     width: 430px;
     justify-content: space-between;
 }
 
-#lab div div{
+#lab div div {
     justify-content: space-evenly;
 }
 
-.bt{
+.bt {
     margin-top: 60px;
     margin-left: 40px;
 }
 
-#la{
+#la {
     margin-left: 40px;
 }
 
-.ba{
+.ba {
     border: none;
 }
 
-#Prod{
+#Prod {
     display: flex;
 }
-#Pro{
+
+#Pro {
     display: flex;
-    height:500px;
+    height: 500px;
     width: 80%;
     margin: auto;
     margin-top: 30px;
-    background-color: darkcyan;
+    background-color: bisque;
 }
-#Prod>div>img{
+
+#Prod>div>img {
     height: 450px;
     width: 400px;
     padding: 10px 10px;
 }
 
-.ds{
+.ds {
     margin-top: 120px;
     margin-left: 10px;
 }
 
-.foot{
-    border: 1px solid black;
+.foot {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
     height: 500px;
     width: 100%;
     display: flex;
     margin-top: 40px;
 }
-.foot div{
+
+.foot div {
     justify-content: space-around;
 }
 
-.d1{
+.d1 {
     margin-left: 40px;
 }
 
-.d3{
+.d3 {
     margin-left: 400px;
 }
 
-.foot>div>h3,h2 {
-    color: palevioletred;
+.foot>div>h3,
+h2 {
+    color: black;
+    ;
 }
 
-#signup{
+#signup {
+
+    margin-left: 10px;
+    padding: 20px 20px 20px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+
+}
+
+#login {
 
     margin-left: 50px;
-    
+    border: 3px solid black;
+    font-size: 20px;
+    padding: 7px 40px;
+    text-decoration: none;
+    color: red;
+
 }
 
-#login{
-
+#signup2{
     margin-left: 50px;
-    
-}
+    border: 3px solid black;
+    font-size: 20px;
+    padding: 7px 40px;
+    text-decoration: none;
+    color: red;
 
+
+}

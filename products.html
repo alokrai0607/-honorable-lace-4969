@@ -10,8 +10,8 @@
     /* Write all necessery css here */
     #product-container {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
-      grid-template-rows:auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
       gap: 20px;
 
 
@@ -31,18 +31,18 @@
 
     #product-container>div>button:hover {
       background-color: green;
-       color: black;
-       font-size: 40px;
-       width: 300px;
+      color: black;
+      font-size: 40px;
+      width: 300px;
 
     }
 
-    #filter{
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        font-size: 60px;
-        background-color: whitesmoke;
+    #filter {
+      height: 100px;
+      width: 100%;
+      text-align: center;
+      font-size: 60px;
+      background-color: whitesmoke;
     }
 
     #product-container>div>button {
@@ -59,51 +59,48 @@
       text-align: center;
 
     }
-       
-    #product-container>div  :nth-child(1){
-        background-color: white;
-        height: 300px;
-        width: 300px;
-        /* grid-template-columns: repeat(4,1fr); */
+
+    #product-container>div :nth-child(1) {
+      background-color: white;
+      height: 300px;
+      width: 300px;
+      /* grid-template-columns: repeat(4,1fr); */
     }
 
-    .nav{
-       
-       background-color: whitesmoke
-       
-   }
+    .nav {
 
-    body{
-        background-color: black; 
+      background-color: whitesmoke
     }
-   .nav>h1 {
-     display: inline;
-     font-size: 100px;
-     color: black 
-      
-   }
 
-   #home{
-      
-       margin-left: 700px;
-       padding: 20px 50px 20px 50px;
-       font-size: 350%;
-       color: black;
-   }
-   #cart{
-      
+    body {
+      background-color: black;
+    }
+
+    .nav>h1 {
+      display: inline;
+      font-size: 100px;
+      color: black
+    }
+
+    #home {
+
+      margin-left: 700px;
+      padding: 20px 50px 20px 50px;
+      font-size: 350%;
+      color: black;
+    }
+
+    #cart {
+
       margin-left: 70px;
       padding: 20px 50px 20px 50px;
       font-size: 350%;
       color: black;
-  }
+    }
 
-  #he{
-    margin-left: 200px;
-  }
-
-
-    
+    #he {
+      margin-left: 200px;
+    }
   </style>
 </head>
 
@@ -111,7 +108,7 @@
   <div class="nav">
     <h1 id="he">Rodan + Fields</h1>
     <a id="home" href="index.html">Home</a>
-    <a id="cart"  href="cart.html">Cart</a>
+    <a id="cart" href="./cart.html">Cart</a>
   </div>
   <!-- Use this Select Tag for Filtering the Products  -->
   <select id="filter">
@@ -125,6 +122,7 @@
 </body>
 <script>
   // Write all necessery JS here 
+ 
 
   let url = "https://636b71edad62451f9fb1bf51.mockapi.io/Products"
   let arr = [];
@@ -146,48 +144,54 @@
   function filteritem() {
     let select = document.querySelector("#filter").value;
     let filteredata = arr.filter(function (element) {
-      return element.category == select
+      return element.category == select;
 
     });
   }
 
 
-  function display(arr) {
+    function display(arr) {
 
-    let carts = JSON.parse(localStorage.getItem("cart")) || [];
-    document.querySelector("#product-container").innerHTML = "";
-
-
-    arr.forEach(function (element) {
-
-      let div = document.createElement("div");
-
-      let img = document.createElement("img")
-      img.setAttribute("src", element.img)
-
-      let title = document.createElement("h2")
-      title.innerText = element.title;
-
-      let category = document.createElement("p")
-      category.innerText = element.category
-
-      let discription = document.createElement("p")
-      discription.innerText = element.discription
-
-      let price = document.createElement("h3")
-      price.innerText = "₹"+element.price
-
-      let btn = document.createElement("button");
-      btn.innerText = "Add To Cart"
-    //   btn.setAttribute("id","hello");
-      div.append(img, title, category, discription, price, btn);
-      document.querySelector("#product-container").append(div);
+      let carts = JSON.parse(localStorage.getItem("cart")) || [];
+      document.querySelector("#product-container").innerHTML = "";
 
 
-    });
 
-  }
-  
+      arr.forEach(function (element) {
+
+        let div = document.createElement("div");
+
+        let img = document.createElement("img")
+        img.setAttribute("src", element.img)
+
+        let title = document.createElement("h2")
+        title.innerText = element.title;
+
+        let category = document.createElement("p")
+        category.innerText = element.category
+
+        let discription = document.createElement("p")
+        discription.innerText = element.discription
+
+        let price = document.createElement("h3")
+        price.innerText = "₹" + element.price
+
+        let btn = document.createElement("button");
+        btn.innerText = "Add To Cart"
+        btn.addEventListener("click", function(){
+          carts.push(element)
+        localStorage.setItem("cart",JSON.stringify(carts));
+
+        })
+        //   btn.setAttribute("id","hello");
+        
+        div.append(img, title, category, discription, price, btn);
+        document.querySelector("#product-container").append(div);
+
+
+      });
+
+    }
 
 </script>
 

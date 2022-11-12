@@ -10,8 +10,8 @@
     /* Write all necessery css here */
     #cart-container {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
-      grid-template-rows:auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
       gap: 20px;
 
 
@@ -31,18 +31,18 @@
 
     #cart-container>div>button:hover {
       background-color: green;
-       color: black;
-       font-size: 40px;
-       width: 300px;
+      color: black;
+      font-size: 40px;
+      width: 300px;
 
     }
 
-    #filter{
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        font-size: 60px;
-        background-color: whitesmoke;
+    #filter {
+      height: 100px;
+      width: 100%;
+      text-align: center;
+      font-size: 60px;
+      background-color: whitesmoke;
     }
 
     #cart-container>div>button {
@@ -59,49 +59,48 @@
       text-align: center;
 
     }
-       
-    #cart-container>div  :nth-child(1){
-        background-color: white;
-        height: 300px;
-        width: 300px;
-        /* grid-template-columns: repeat(4,1fr); */
+
+    #cart-container>div :nth-child(1) {
+      background-color: white;
+      height: 300px;
+      width: 300px;
+      /* grid-template-columns: repeat(4,1fr); */
     }
 
-    .nav{
-       
-       background-color: whitesmoke
-       
-   }
+    .nav {
 
-    body{
-        background-color: bisque; 
+      background-color: whitesmoke
     }
-   .nav>h1 {
-     display: inline;
-     font-size: 100px;
-     color: black 
-      
-   }
 
-   #home{
-      
-       margin-left: 700px;
-       padding: 20px 50px 20px 50px;
-       font-size: 350%;
-       color: black;
-   }
-   #cart{
-      
+    body {
+      background-color: bisque;
+    }
+
+    .nav>h1 {
+      display: inline;
+      font-size: 100px;
+      color: black
+    }
+
+    #home {
+
+      margin-left: 700px;
+      padding: 20px 50px 20px 50px;
+      font-size: 350%;
+      color: black;
+    }
+
+    #cart {
+
       margin-left: 70px;
       padding: 20px 50px 20px 50px;
       font-size: 350%;
       color: black;
-  }
+    }
 
-  #he{
-    margin-left: 200px;
-  }
-
+    #he {
+      margin-left: 200px;
+    }
   </style>
 </head>
 
@@ -117,26 +116,28 @@
   </div>
 </body>
 <script>
-  // Write all necessery JS here 
-  let cartItem = JSON.parse(localStorage.getItem("cart"));
-  display(cartItem);
+  // Write all necessery JS here  
+  let cartItems = JSON.parse(localStorage.getItem("cart"));
+  display(cartItems);
+  //console.log(cartItem);
+  let total = cartItems.reduce((acc, element) => acc + element.price, 0)
+  document.querySelector("#total").innerText = "YourTotal Cart Price is:-₹" + total
+  // console.log(total);
 
-  let total = cartItem.reduce((acc, element) => acc + element.price, 0)
-  document.querySelector("#total").innerText = "YourTotal Cart Price is" + "₹"+total
-  console.log(total);
 
-  function display(cartItem) {
+
+  function display(cartItems) {
 
 
     document.querySelector("#cart-container").innerHTML = "";
 
 
-    cartItem.forEach(function (element) {
+    cartItems.forEach(function (element,index) {
 
       let div = document.createElement("div");
 
-      let img = document.createElement("img")
-      img.setAttribute("src", element.img)
+      let imgProd = document.createElement("img")
+      imgProd.setAttribute("src", element.img)
 
       let title = document.createElement("h2")
       title.innerText = element.title;
@@ -151,37 +152,44 @@
       price.innerText = "₹" + element.price
 
 
-      let btn1 = document.createElement("button");
-      btn1.innerText = "+"
-      let c = 0
-      btn1.addEventListener("click", function () {
-        c++
-        span.innerText = c
-      })
+      // let btn1 = document.createElement("button");
+      // btn1.innerText = "+"
+      // let c = 0
+      // btn1.addEventListener("click", function () {
+      //   c++
+      //   span.innerText = c
+      // })
+
+
       let span = document.createElement("span")
       span.innerText = "1"
 
 
-      let btn2 = document.createElement("button");
-      btn2.innerText = "-"
-      btn2.addEventListener("click", function () {
-        c--
-        span.innerText = c
-      })
+      // let btn2 = document.createElement("button");
+      // btn2.innerText = "-"
+      // btn2.addEventListener("click", function () {
+      //   c--
+      //   span.innerText = c
+      // })
       let btn3 = document.createElement("button");
       btn3.innerText = "Remove"
+      btn3.addEventListener("click", function () {
+        deletedata(cartItems, index)
+        window.location.reload()
+      })
 
-      div.append(img, title, category, discription, price, btn1, btn2, btn3, span)
+      div.append(imgProd, title, category, discription, price,  btn3, span)  //btn1, btn2,
 
       document.querySelector("#cart-container").append(div);
 
-
     })
+    function deletedata(arr, index) {
+      arr.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(arr));
 
+      display(arr);
+
+    }
   }
-
-
-
-</script>
-
-</html>
+  </script>
+  </html>
