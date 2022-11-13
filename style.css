@@ -18,9 +18,10 @@ body {
 #find {
     margin-top: 0px;
     margin-left: 50px;
+    margin-bottom: 50px;
     border-radius: 5%;
     color: red;
-    padding: 10px;
+    padding: 5px;
     border: 3px solid black;
     background-color: whitesmoke;
 }
@@ -29,9 +30,12 @@ body {
     text-decoration: none;
 }
 
+
 #logo {
     margin-left: 400px;
-    margin-top: 20px;
+    margin-top: 0px;
+    height: 70px;
+    width: 300px;
 
 }
 
@@ -49,7 +53,7 @@ body {
     margin-left: 280px;
     margin-top: 20px;
     border: 3px solid black;
-    color: red;
+    color: black;
     border-radius: 5%;
     padding: 10px;
     background-color: whitesmoke;
@@ -66,7 +70,7 @@ body {
     font-size: 20px;
     padding: 7px 40px;
     text-decoration: none;
-    color: red;
+    /* color: red; */
 
 
 }
@@ -366,7 +370,7 @@ button {
 }
 
 .d3 {
-    margin-left: 400px;
+    margin-left: 900px;
 }
 
 .foot>div>h3,
@@ -392,8 +396,8 @@ h2 {
     font-size: 20px;
     padding: 7px 40px;
     text-decoration: none;
-    color: red;
-
+    color: black;
+    
 }
 
 #signup2{
@@ -402,7 +406,18 @@ h2 {
     font-size: 20px;
     padding: 7px 40px;
     text-decoration: none;
-    color: red;
+    color: black;
+}
 
+ #gh{
 
+     font-size: 50px;
+     margin-bottom: 50px;
+     color: greenyellow;
+ }
+ #gz{
+
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: black;
 }
