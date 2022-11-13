@@ -43,6 +43,7 @@
       text-align: center;
       font-size: 60px;
       background-color: whitesmoke;
+      margin-top: 60px;
     }
 
     #product-container>div>button {
@@ -73,7 +74,7 @@
     }
 
     body {
-      background-color: black;
+      background-color: whitesmoke;
     }
 
     .nav>h1 {
@@ -84,37 +85,76 @@
 
     #home {
 
-      margin-left: 700px;
-      padding: 20px 50px 20px 50px;
+      margin-left: 100px;
+      margin-top: 10px;
+      padding: 20px 20px 20px 20px;
       font-size: 350%;
       color: black;
+      border: 3px solid black;
+      background-color: bisque;
+      text-decoration: none;
+
     }
 
     #cart {
 
-      margin-left: 70px;
-      padding: 20px 50px 20px 50px;
+      margin-left: 100px;
+      margin-top: 10px;
+      padding: 20px 20px 20px 20px;
       font-size: 350%;
       color: black;
+      border: 3px solid black;
+      background-color: bisque;
+      text-decoration: none;
     }
 
     #he {
-      margin-left: 200px;
+      margin-left: 150px;
+      color: red;
+    }
+
+    @media all and (min-width : 768px) and (max-width : 1024px) {
+
+      #product-container {
+        /* display: grid; */
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-rows: auto; */
+        gap: 20px;
+
+
+      }
+
+    }
+
+    @media all and (min-width : 320px) and (max-width : 767px) {
+
+      #product-container {
+        /* display: grid; */
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: auto; */
+        gap: 20px;
+
+
+      }
+
     }
   </style>
 </head>
 
 <body>
   <div class="nav">
-    <h1 id="he">Rodan + Fields</h1>
+    <h1 id="he">Purchase Your Product here</h1>
     <a id="home" href="index.html">Home</a>
     <a id="cart" href="./cart.html">Cart</a>
   </div>
   <!-- Use this Select Tag for Filtering the Products  -->
-  <select id="filter">
+  <select onchange="filteritem()" id="filter">
     <option value="">Filter By Category</option>
-    <option value="Skin">Skin Care</option>
-    <option value="Hair">Hair Care</option>
+    <option value="Skin Care">Skin Care</option>
+    <option value="Hair Care">Hair Care</option>
+    <option value="Helth Care">Helth Care</option>
+    <option value="Luxury Beauty Care">Luxury Beauty Care</option>
+
   </select>
   <div id="product-container">
     <!-- Here Append All the Products  -->
@@ -122,7 +162,7 @@
 </body>
 <script>
   // Write all necessery JS here 
- 
+
 
   let url = "https://636b71edad62451f9fb1bf51.mockapi.io/Products"
   let arr = [];
@@ -130,7 +170,7 @@
     try {
       let res = await fetch(url);
       let out = await res.json();
-      arr = out
+      arr = [...out]
       console.log(arr);
       display(arr)
     } catch (err) {
@@ -142,56 +182,61 @@
   //filter function here
 
   function filteritem() {
-    let select = document.querySelector("#filter").value;
-    let filteredata = arr.filter(function (element) {
-      return element.category == select;
+    // console.log("touch")
+    let alok = document.querySelector("#filter").value;
+    let show = arr.filter(function (element) {
+      return element.category == alok;
+    })
 
-    });
+
+    console.log(show)
+    display(show);
+
   }
 
 
-    function display(arr) {
+  function display(arr) {
 
-      let carts = JSON.parse(localStorage.getItem("cart")) || [];
-      document.querySelector("#product-container").innerHTML = "";
-
-
-
-      arr.forEach(function (element) {
-
-        let div = document.createElement("div");
-
-        let img = document.createElement("img")
-        img.setAttribute("src", element.img)
-
-        let title = document.createElement("h2")
-        title.innerText = element.title;
-
-        let category = document.createElement("p")
-        category.innerText = element.category
-
-        let discription = document.createElement("p")
-        discription.innerText = element.discription
-
-        let price = document.createElement("h3")
-        price.innerText = "₹" + element.price
-
-        let btn = document.createElement("button");
-        btn.innerText = "Add To Cart"
-        btn.addEventListener("click", function(){
-          carts.push(element)
-        localStorage.setItem("cart",JSON.stringify(carts));
-
-        })
-        //   btn.setAttribute("id","hello");
-        
-        div.append(img, title, category, discription, price, btn);
-        document.querySelector("#product-container").append(div);
+    let carts = JSON.parse(localStorage.getItem("cart")) || [];
+    document.querySelector("#product-container").innerHTML = "";
 
 
-      });
 
-    }
+    arr.forEach(function (element) {
+
+      let div = document.createElement("div");
+
+      let img = document.createElement("img")
+      img.setAttribute("src", element.img)
+
+      let title = document.createElement("h1")
+      title.innerText = element.title;
+
+      let cat = document.createElement("h2")
+      cat.innerText = element.category
+
+      let discription = document.createElement("p")
+      discription.innerText = element.discription
+
+      let price = document.createElement("h2")
+      price.innerText = "₹" + element.price
+
+      let btn = document.createElement("button");
+      btn.innerText = "Add To Cart"
+      btn.addEventListener("click", function () {
+        carts.push(element)
+        localStorage.setItem("cart", JSON.stringify(carts));
+
+      })
+      //   btn.setAttribute("id","hello");
+
+      div.append(img, title, cat, discription, price, btn);
+      document.querySelector("#product-container").append(div);
+
+
+    });
+
+  }
 
 </script>
 

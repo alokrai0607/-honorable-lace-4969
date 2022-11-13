@@ -17,26 +17,14 @@ form.addEventListener("submit", function (event) {
         if (getmail[i].email == obj.email && getmail[i].pass == obj.pass) {
             bool = true
             alert("Login success")
-            window.location.href = "products.html";
+            window.location.href = "index.html";
             break;
         }
 
     }
     if (!bool) {
-        alert("Wrong Password")
+        alert("Please check your Credentials")
     }
 })
 
-    //  console.log(getmail.email);
-    //  getmail.forEach(function(e){
-    //     if(obj.email==e.email){
-    //         if(obj.pass==e.pass){
-    //             alert("Login Sucessfull")
-    //             window.location.href = "products.html";
-    //         }else{
-    //             alert("Wrong Password")
-    //         }
-    //     }else{
-    //         alert("invalid Credentials")
-    //     }
-
+    

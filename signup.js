@@ -17,6 +17,4 @@ form.addEventListener("submit",function(event){
         localStorage.setItem("signup",JSON.stringify(LSData))
         window.location.href =  'login.html'
     }
-
-
 })
