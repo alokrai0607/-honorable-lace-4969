@@ -1,23 +1,7 @@
 # -honorable-lace-4969
 
 # Rodan And Fields Clone
-
-
-
-
-
-
-
-
-![Rodan And Fields](https://drive.google.com/file/d/1g2aGi9cfbRqnRfWNlg4yzv7QjG3bpfY8/view?usp=sharing)
-![Rodan And Fields](https://drive.google.com/file/d/1S6SDOq-NuaXxnLokDl0a4ZSAqTGcVCYr/view?usp=sharing)
-![Rodan And Fields](https://drive.google.com/file/d/1CK7DJv-q3DVepldYOiW5CMvx77teEgF8/view?usp=sharing)
-![Rodan And Fields](https://drive.google.com/file/d/1ltjOyKka4LpvNMn789LqWKcetT73WNZ9/view?usp=sharing)
-![Rodan And Fields](https://drive.google.com/file/d/1QuMh--088ERLNf-dOZ8Ztj2vp333cYg2/view?usp=sharing)
-
-
-
-
+https://drive.google.com/file/d/1g2aGi9cfbRqnRfWNlg4yzv7QjG3bpfY8/view?usp=drive_link
 A clone of an ecommerce web applications which provides all kinds of cosmetic  products.
 
 **Features:**
