@@ -1,7 +1,8 @@
 # -honorable-lace-4969
 
 # Rodan And Fields Clone
-https://drive.google.com/file/d/1g2aGi9cfbRqnRfWNlg4yzv7QjG3bpfY8/view?usp=drive_link
+![image](https://github.com/alokrai0607/Rodan-Fields/assets/112754692/ec17bd02-f68f-4a9e-9dbe-ea191b3f29d0)
+
 A clone of an ecommerce web applications which provides all kinds of cosmetic  products.
 
 **Features:**
