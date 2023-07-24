@@ -187,20 +187,14 @@
     let show = arr.filter(function (element) {
       return element.category == alok;
     })
-
-
     console.log(show)
     display(show);
 
   }
-
-
   function display(arr) {
 
     let carts = JSON.parse(localStorage.getItem("cart")) || [];
     document.querySelector("#product-container").innerHTML = "";
-
-
 
     arr.forEach(function (element) {
 

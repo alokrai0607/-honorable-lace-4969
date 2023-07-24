@@ -1,9 +1,7 @@
 
 let form = document.getElementById("form")
-
 form.addEventListener("submit", function (event) {
     event.preventDefault()
-
     let obj = {
         email: form.email.value,
         pass: form.pass.value,
